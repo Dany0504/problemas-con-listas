@@ -4,6 +4,15 @@ import java.util.List;
 
 public class Main {
 
+    //Metodo para convertir de cadena a entero
+    private static List<Integer> ConvertirLista(String input) {
+        String[] numerosComoTexto = input.split(","); // Separar por comas
+        List<Integer> lista = new ArrayList<>();
+        for (String numero : numerosComoTexto) {
+            lista.add(Integer.parseInt(numero.trim())); // Convierte cada número a entero y lo mete a la lista
+        }
+        return lista;
+    }
     //Metodo para combinar las listas
     public static List<Integer> merge(List<Integer> list1, List<Integer> list2) {
         List<Integer> result = new ArrayList<>(list1);
