@@ -4,6 +4,26 @@ import java.util.List;
 
 public class Main {
 
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.out.println("Debes escribir dos listas de números como argumentos.");
+            return;
+        }
+
+        // Convierte las dos cadenas en listas de números enteros
+        List<Integer> list1 = ConvertirLista(args[0]);
+        List<Integer> list2 = ConvertirLista(args[1]);
+
+        // Mezcla ambas listas
+        List<Integer> listaMezclada = merge(list1, list2);
+
+        // Ordena la lista mezclada con el método burbuja
+        Burbuja(listaMezclada);
+
+        // Imprime la lista final ordenada
+        System.out.println(listaMezclada);
+    }
+
     //Metodo para convertir de cadena a entero
     private static List<Integer> ConvertirLista(String input) {
         String[] numerosComoTexto = input.split(","); // Separar por comas
@@ -33,8 +53,5 @@ public class Main {
             }
         }
     }
-
-
-
 
 }
